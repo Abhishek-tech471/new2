@@ -1,0 +1,59 @@
+move=[' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
+
+st='''
+
+{}|{}|{}
+-----
+{}|{}|{}
+-----
+{}|{}|{}
+
+'''.format(*move)
+print(st)
+turn= '0'
+while 1:
+    player_in = int(input(f'{turn} turn Enter location 0-8: '))
+    if move[0]==move[1]==move[2]!=' ':
+        print(move[2],"wins")
+        break
+    elif move[3]==move[4]==move[5]!=' ':
+        print(move[3],"wins")
+        break
+    elif move[6]==move[7]==move[8]!=' ':
+        print(move[6],"wins")
+        break
+    elif move[0]==move[3]==move[6]!=' ':
+        print(move[3],"wins")
+        break
+    elif move[1]==move[4]==move[7]!=' ':
+        print(move[7],"wins")
+        break
+    elif move[2]==move[5]==move[8]!=' ':
+        print(move[2],"wins")
+        break
+    elif move[0]==move[4]==move[8]!=' ':
+        print(move[0],"wins")
+        break
+    elif move[2]==move[4]==move[6]!=' ':
+        print(move[2],"wins")
+        break
+    elif ' ' not in move:
+        print("Match tie")
+        break
+    else:
+        if move[player_in]!=' ':
+            print("try another place")
+            continue
+        else:
+            move[player_in]= turn
+        turn = 'x' if turn == '0' else '0'
+        st='''
+
+        {}|{}|{}
+        -----
+        {}|{}|{}
+        -----
+        {}|{}|{}
+
+        '''.format(*move)
+        print(st)

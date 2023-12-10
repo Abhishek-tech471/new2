@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS and jQuery (Optional for certain Bootstrap features) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Style for fixed image */
+.fixed-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    opacity: .9;
+}
+div.b {
+    background-color: white;
+    margin-top: 380px;
+    padding: 20px;
+    text-align: center;
+}
+div.c,.d,.e,.g{
+    background-color: white;
+    font-size: 18px;
+}
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 2s ease-in forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+/* Shadow effect */
+.shadow-text {
+    text-shadow: 5px 5px 4px rgba(107, 105, 105, 0.948);
+}
+/* Corrected icon styling */
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+.c,
+.d,
+.e{
+    flex: 0 0 0 33%;
+}
+/* Your CSS styles remain the same */
+.counter-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px; /* Adjust the max-width to fit your layout */
+    padding: 20px; /* Optional padding for the counter-wrapper */
+}
+
+.counter {
+    list-style-type: none;
+    text-align: center;
+    margin-top: 6%;
+    width: 46%;
+}
+
+
+/* Add these styles to animate the counting numbers */
+.counter {
+    font-size: 32px;
+    text-align: center;
+    animation: countUp 2s ease-in-out forwards;
+    opacity: 0;
+}
+.i {
+  padding: 0 0 20px 20px;
+  border-left: 2px solid #0563bb;
+  position: relative;
+  margin-left: 20px;
+}
+h5{
+    background-color: #e4edf9;
+    display: inline-block;
+    margin-top: 1px;
+}
+.j,.h{
+    flex: 0 0 50%;
+}
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Additional styling for the counter label */
+.counter-label {
+    font-size: 14px;
+}
+/* CSS */
+/* Define animation for HTML progress bar */
+@keyframes animateHTML {
+    from {
+        width: 0%;
+    }
+}
+
+/* Apply animation to HTML progress bar */
+.html-progress .progress-bar {
+    animation: animateHTML 1.5s ease-in-out forwards;
+}
+
+/* Define animation for CSS progress bar */
+@keyframes animateCSS {
+    from {
+        width: 0%;
+    }
+}
+
+/* Apply animation to CSS progress bar */
+.css-progress .progress-bar {
+    animation: animateCSS 1.5s ease-in-out forwards;
+}
+
+/* Define animation for JavaScript progress bar */
+@keyframes animateJS {
+    from {
+        width: 0%;
+    }
+}
+
+/* Apply animation to JavaScript progress bar */
+.js-progress .progress-bar {
+    animation: animateJS 2.5s ease-in-out forwards;
+}
+    </style>
+    <style>
+        .services .icon-box {
+    text-align: center;
+    padding: 70px 20px 80px 20px;
+    transition: all ease-in-out 0.3s;
+    background: #fff;
+    box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+  }
+  
+  .services .icon-box .icon {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out 0.3s;
+    position: relative;
+  }
+  
+  .services .icon-box .icon i {
+    font-size: 36px;
+    transition: 0.5s;
+    position: relative;
+  }
+  
+  .services .icon-box .icon svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .services .icon-box .icon svg path {
+    transition: 0.5s;
+    fill: #f5f5f5;
+  }
+  
+  .services .icon-box h4 {
+    font-weight: 600;
+    margin: 10px 0 15px 0;
+    font-size: 22px;
+  }
+  
+  .services .icon-box h4 a {
+    color: #222222;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .services .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .services .iconbox-blue i {
+    color: #47aeff;
+  }
+  
+  .services .iconbox-blue:hover .icon i {
+    color: #fff;
+  }
+  
+  .services .iconbox-blue:hover .icon path {
+    fill: #47aeff;
+  }
+  
+  .services .iconbox-orange i {
+    color: #ffa76e;
+  }
+  
+  .services .iconbox-orange:hover .icon i {
+    color: #fff;
+  }
+  
+  .services .iconbox-orange:hover .icon path {
+    fill: #ffa76e;
+  }
+  
+  .services .iconbox-pink i {
+    color: #e80368;
+  }
+  
+  .services .iconbox-pink:hover .icon i {
+    color: #fff;
+  }
+  
+  .services .iconbox-pink:hover .icon path {
+    fill: #e80368;
+  }
+  
+  .services .iconbox-yellow i {
+    color: #ffbb2c;
+  }
+  
+  .services .iconbox-yellow:hover .icon i {
+    color: #fff;
+  }
+  
+  .services .iconbox-yellow:hover .icon path {
+    fill: #ffbb2c;
+  }
+  
+  .services .iconbox-red i {
+    color: #ff5828;
+  }
+  
+  .services .iconbox-red:hover .icon i {
+    color: #fff;
+  }
+  
+  .services .iconbox-red:hover .icon path {
+    fill: #ff5828;
+  }
+  
+  .services .iconbox-teal i {
+    color: #11dbcf;
+  }
+  
+  .services .iconbox-teal:hover .icon i {
+    color: #fff;
+  }
+  
+  .services .iconbox-teal:hover .icon path {
+    fill: #11dbcf;
+  }
+  /*contact*/
+  .contact .info {
+  width: 100%;
+  background: #fff;
+}
+
+.contact .info i {
+  font-size: 20px;
+  color: #34b7a7;
+  float: left;
+  width: 44px;
+  height: 44px;
+  background: #effbf9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact .info h4 {
+  padding: 0 0 0 60px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #222222;
+}
+
+.contact .info p {
+  padding: 0 0 0 60px;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: #555555;
+}
+
+.contact .info .email,
+.contact .info .phone {
+  margin-top: 40px;
+}
+
+.contact .info .email:hover i,
+.contact .info .address:hover i,
+.contact .info .phone:hover i {
+  background: #34b7a7;
+  color: #fff;
+}
+
+.contact .php-email-form {
+  width: 100%;
+  background: #fff;
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background: #ed3c0d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 4px;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: #34b7a7;
+}
+
+.contact .php-email-form input {
+  height: 44px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: #34b7a7;
+  border: 0;
+  padding: 10px 30px 12px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: #3dc8b7;
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+      </style>
+
+    <script>
+        // Wait for the DOM content to load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Typed.js using the class and data attribute
+    var typed = new Typed('.typed', {
+        strings: document.querySelector('.typed').getAttribute('data-typed-items').split(','),
+        typeSpeed: 100,
+        loop: true
+    });
+    
+    // Add the fade-in class after a delay to trigger the animation
+    setTimeout(function() {
+        document.querySelector('.fade-in').classList.add('fade-in');
+    }, 500); // Adjust the delay as needed
+});
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2 // Change this threshold as needed
+            };
+
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counters = entry.target.querySelectorAll('.count');
+                        counters.forEach(counter => {
+                            const updateCount = () => {
+                                const target = +counter.getAttribute('data-target');
+                                const count = +counter.innerText;
+                                const speed = 200; // Adjust the speed of counting
+
+                                const inc = target / speed;
+
+                                if (count < target && target > 25) {
+                                    counter.innerText = Math.ceil(count + inc);
+                                    setTimeout(updateCount, 20); // Add a delay of 10 milliseconds (adjust as needed)
+                                } else if (count < target && target < 25) {
+                                    counter.innerText = Math.ceil(count + inc);
+                                    setTimeout(updateCount, 100); // Add a delay of 1 millisecond (adjust as needed)
+                                } else {
+                                    counter.innerText = target;
+                                }
+                            };
+
+                            updateCount();
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            // Specify the elements you want to observe
+            const elementsToObserve = document.querySelectorAll('.counter-wrapper');
+            elementsToObserve.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+    <style>
+        /* Your existing styles */
+        .bg-transparent {
+            background-color: #d7f9f8 !important;
+            transition: background-color 0.3s ease-in-out;
+        }
+    
+        .bg-visible {
+            background-color: rgb(255, 255, 255) !important;
+            box-shadow: 0 2px 4px rgba(48, 29, 29, 0.1);
+        }
+    
+        /* New styles for the navbar links */
+        .navbar-nav .nav-link {
+            color: #47aeff; /* Set default color to white */
+            transition: color 0.3s ease-in-out;
+        }
+    
+        .navbar-nav .nav-link.active {
+            color: rgb(0, 60, 255); /* Change color when active */
+        }
+        .portfolio {
+          display: grid;
+          grid-template-areas: 'item1 item2 item3''item4 item2 item5'; /* Responsive columns */
+          gap: 20px; /* Adjust the gap between images */
+        }
+
+        .portfolio-item {
+          overflow: hidden;
+          border-radius: 8px;
+          position: relative;
+        }
+
+        .portfolio-item img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 8px;
+          object-fit: cover; /* Maintain aspect ratio */
+          transition: transform 0.3s ease;
+        }
+        .portfolio-item img:hover {
+          transform: scale(1.1); /* Zoom effect on hover */
+          color: #47aeff;
+        }
+      </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var navbar = document.querySelector(".navbar");
+    
+            // Function to add or remove the transparency class
+            function toggleNavbarBackground() {
+                if (window.scrollY > 730) {
+                    navbar.classList.add("bg-visible");
+                    navbar.classList.remove("bg-transparent");
+                } else {
+                    navbar.classList.add("bg-transparent");
+                    navbar.classList.remove("bg-visible");
+                }
+            }
+    
+            // Add the class initially when the page loads
+            toggleNavbarBackground();
+    
+            // Event listener for scrolling
+            window.addEventListener("scroll", function () {
+                toggleNavbarBackground();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color: #47aeff;">
+                <!-- Uncomment the line below if you also wish to use an image logo -->
+                <!-- <img src="assets/img/logo.png" alt=""> -->
+                Portfolio<span></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="1">
+    <div class="a" id="home">
+        <img src="Untitled.jpeg" height="cover" width="cover" class="fixed-image">
+        <p class="display-1 fade-in" style="margin-top: 18%; margin-left: 13%; color: white; font-size: 92px;"><b>Abhishek Yadav</b></p>
+        <p class="display-6 fade-in" style="margin-left: 13%; margin-top: 0px; color: white;"> I'm a <span id="typedText" class="typed" data-typed-items="Photographer,Webdeveloper,Designer" style="color: rgb(116, 237, 100);"></span></p>
+        <div class="header-social-links" style="margin-left: 14%;">
+            <a href="https://twitter.com/x" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/" class="facebook" style="margin-left: 18px;"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" class="instagram" style="margin-left: 18px;"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/" class="linkedin" style="margin-left: 18px;"><i class="bi bi-linkedin"></i></i></a>
+          </div>
+    
+    </div>
+    <div class="b" style="margin-top: 300px; width: 100%; background-color: #d7f9f8;" id="about">
+        <p class="shadow-text display-3 mb-5" style="text-align: center; padding: 30px; position: relative;"><b>ABOUT ME</b></p>
+    </div>
+    <div class="wrapper">
+    <div class="c" style="display: inline-block; width: 32%; background-color: #d7f9f8;">
+        <img src="Untitled (3).jpg" style="margin-left: 100px;" height="350px" width="350px"  class="img-fluid">
+    </div>
+    <div class="d" style="display: inline-block; width: 34%; background-color: #d7f9f8;">
+        <ul type="none" class="A">
+            <li style="margin-left: 12%;">
+                <strong><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> Name: </strong>Abhishek Yadav
+            </li>
+            <li style="margin-top: 3%; margin-left: 12%;">
+                <strong><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> Degree:</strong> B.tech CSE
+            </li>
+            <li style="margin-top: 3%; margin-left: 12%;">
+                <strong><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> Phone no.:</strong> 8869835564
+            </li>
+     <div class="counter-wrapper">
+        <div class="counter">
+            <li style="font-size: 32px; margin-top: 8%; margin-left: 20%;">
+                <img width="46" height="46" src="https://img.icons8.com/ios/50/24DDA9/anime-emoji--v2.png" alt="anime-emoji--v2" style="float: left;"/><b><span class="count" data-target="252">0</span></b><br>
+                <p style="font-size: 14px; margin-left: 50px;">Happy clients</p>
+            </li>
+            <li style="font-size: 32px; margin-top: 7%; margin-left: 20%;">
+                <img width="46" height="46" src="https://img.icons8.com/fluency-systems-regular/48/8ADD29/clock--v3.png" alt="clock--v3"style="float: left;"/> <b><span class="count" data-target="16">0</span></b><br>
+                <p style="font-size: 14px; margin-left: 50px;">Years of experience</p>
+            </li></div></div>
+        </ul>
+    </div>
+    <div class="e" style="display: inline-block; width: 34%; background-color: #d7f9f8;">
+        <ul type="none" class="B">
+            <li>
+                <strong><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> Age:</strong> 19
+            </li>
+            <li style="margin-top: 3%;"></li>
+                <strong><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> City:</strong> Mathura
+            </li>
+            <li style="margin-top: 3%;"></li>
+                <strong><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="red" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+                  </svg> Email:</strong> abhishekcsed56@gmail.com
+            </li>
+            <div class="counter-wrapper">
+                <div class="counter">
+            <li style="font-size: 32px; margin-top: 7%;">
+                <img width="46" height="46" src="https://img.icons8.com/ios/50/339AF0/literature--v1.png" alt="literature--v1" style="float: left;"/><b><span class="count" data-target="432">0</span></b><br>
+                <p style="font-size: 14px; margin-left: 50px;">Projects</p>
+            </li>
+            <li style="font-size: 32px; margin-top: 7%;">
+            <img width="46" height="46" src="https://img.icons8.com/ios/50/EEEB32/warranty--v1.png" alt="warranty--v1" style="float: left;"/><b><span class="count" data-target="10" >0</span></b><br>
+                <p style="font-size: 14px; margin-left: 50px;">Awards</p>
+            </li>
+        </ul>
+        </div>
+        <br>
+    </div>
+    </div>
+    <div class="wrapper">
+    <div class="e" id="skills" style="display: inline-block; width: 60%; background-color: #ffffea;"><br>
+        <br><br>
+        <p class="shadow-text display-4 mb-5" style="text-align: center; padding: 30px; position: relative;"><b>Skills</b></p>
+        <center>HTML:</center>
+        <!-- HTML -->
+    <div class="progress html-progress" style="width: 70%; margin-left: 13%;" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar text-bg-warning" style="width: 100%">100%</div>
+    </div>
+
+        <center>CSS:</center>
+        <!-- HTML -->
+    <div class="progress html-progress" style="width: 70%; margin-left: 13%;" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+    <div class="progress-bar text-bg-warning" style="width: 90%">90%</div>
+    </div>
+
+        <center>Javascript:</center>
+        <div class="progress html-progress" style="width: 70%; margin-left: 13%;" role="progressbar" aria-label="Warning example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar text-bg-warning" style="width: 55%">55%</div>
+        </div>
+        <br>
+        <br>
+    </div>
+    <div class="n" style="display: inline-block; width: 40%; background-color: #ffffea;"><br><br><br><br>
+      <img src="./skills.jpg" alt="" height="auto" width="500px">
+    </div>
+    </div>
+    <div class="g" id="resume"><br>
+        <div class="g" style="background-color: #FFFAE3;"><br>
+            <br>
+            <p class="shadow-text display-4 mb-5" style="text-align: center; padding: 30px; position: relative; font-size: 54px;"><b>Resume</b></p>
+            <div class="wrapper">
+            <div class="j" style="display: inline-block; width: 50%;">    
+            <h3 style="margin-left: 25%;">Summary</h3>  
+            <div class="i" style="margin-left: 28%;">
+                <h3>Abhishek Yadav</h3>
+                <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+                <ul>
+                    <li>GLA university, Mathura</li>
+                    <li>+918869835564</li>
+                    <li>abhishekcsed56@gmail.com</li>
+                </ul>
+            </div><br>
+            <h3 style="margin-left: 25%;">Education</h3>
+            <div class="i" style="margin-left: 28%;">
+                <h3>Bachelor of Technology CS (BCT)</h3>
+                <h5>2023-2027</h5>
+                <p style="margin-top: 2px;"><em>GLA University, Mathura</em></p>
+                <p>this is a private university at Mathura offers many courses at high prizes.</p>
+            </div></div>
+            <div class="h" style="display: inline-block; width: 50%;">
+                <h3 style="margin-left: 15%;">Professional experience</h3>
+                <div class="i" style="margin-left: 18%;">
+            
+            <h5>2023-Present</h5>
+            <p> I am a student have no professional experience.<br> Thank you</p></div>
+            </div>
+            </div>
+            <br>
+        </div>  
+    </div>
+    <div style="background-color: #fff0d4;" id="portfolio">
+        <br><br><br>
+        <p class="shadow-text display-4 mb-5" style="text-align: center; padding: 30px; position: relative; font-size: 54px;"><b>Portfolio</b></p>
+    <div class="portfolio" style="margin-left: 100px; margin-right: 100px; margin-top: 5%;">
+        <div class="portfolio-item" width="250px" style="grid-area: item1;">
+          <img src="./portfolio-1.jpg" alt="Image 1">
+        </div>
+        <div class="portfolio-item" width="250px" style="grid-area: item2;">
+          <img src="./portfolio-6.jpg" alt="Image 1">
+        </div>
+        <div class="portfolio-item" width="250px"  style="grid-area: item3;">
+          <img src="./image-246x250.jpg" alt="Image 1">
+        </div>
+        <div class="portfolio-item"  width="250px" style="grid-area: item4;">
+          <img src="./portfolio-7.jpg" alt="Image 2">
+        </div>
+        <div class="portfolio-item" width="250px" style="grid-area: item5;">
+          <img src="./portfolio-8.jpg" alt="Image 2">
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    </div>
+    <section id="services" class="services" style="background-color: #fbe0e0;">
+        <div class="container" data-aos="fade-up">
+    <br>
+          <div class="section-title">
+            <p class="shadow-text display-4 mb-5" style="text-align: center; padding: 30px; position: relative; font-size: 54px;"><b>Services</b></p>
+          </div>
+    
+          <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box iconbox-blue">
+                <div class="icon">
+                  <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
+                  </svg>
+                  <i class="bx bxl-dribbble"></i>
+                </div>
+                <h4><a href="">Lorem Ipsum</a></h4>
+                <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box iconbox-orange ">
+                <div class="icon">
+                  <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
+                  </svg>
+                  <i class="bx bx-file"></i>
+                </div>
+                <h4><a href="">Sed Perspiciatis</a></h4>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box iconbox-pink">
+                <div class="icon">
+                  <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
+                  </svg>
+                  <i class="bx bx-tachometer"></i>
+                </div>
+                <h4><a href="">Magni Dolores</a></h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box iconbox-yellow">
+                <div class="icon">
+                  <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"></path>
+                  </svg>
+                  <i class="bx bx-layer"></i>
+                </div>
+                <h4><a href="">Nemo Enim</a></h4>
+                <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box iconbox-red">
+                <div class="icon">
+                  <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"></path>
+                  </svg>
+                  <i class="bx bx-slideshow"></i>
+                </div>
+                <h4><a href="">Dele Cardo</a></h4>
+                <p>Quis consequatur saepe eligendi voluptatem consequatur dolor consequuntur</p>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box iconbox-teal">
+                <div class="icon">
+                  <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"></path>
+                  </svg>
+                  <i class="bx bx-arch"></i>
+                </div>
+                <h4><a href="">Divera Don</a></h4>
+                <p>Modi nostrum vel laborum. Porro fugit error sit minus sapiente sit aspernatur</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br><br>
+      </section>
+    <div>
+<section id="contact" class="contact" style="background-color: #e5d4ef;">
+  <div class="container" >
+
+    <div class="section-title">
+      <p class="shadow-text display-4 mb-5" style="text-align: center; padding: 30px; position: relative; font-size: 54px;"><b>Contact</b></p>
+    <div>
+      <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d343706.5040569619!2d77.62048!3d27.17667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3973983eeb42b1ed%3A0x74749ba30f8b7d61!2sMathura%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1635557748487!5m2!1sen!2sin" frameborder="0" allowfullscreen></iframe>
+
+    </div>
+
+    <div class="row mt-5" style="background-color: #e5d4ef;">
+
+      <div class="col-lg-4">
+        <div class="info" style="background-color: #e5d4ef;">
+          <div class="address">
+            <i class="bi bi-geo-alt"></i>
+            <h4>Location:</h4>
+            <p>GLA University, Mathura</p>
+          </div>
+
+          <div class="email" style="background-color: #e5d4ef;">
+            <i class="bi bi-envelope"></i>
+            <h4>Email:</h4>
+            <p>abhishekcsed56@gmail.com</p>
+          </div>
+
+          <div class="phone" style="background-color: #e5d4ef;">
+            <i class="bi bi-phone"></i>
+            <h4>Call:</h4>
+            <p>8869835564</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-lg-8 mt-5 mt-lg-0">
+
+        <form action="forms/contact.php" method="post" role="form" class="php-email-form" style="background-color: #e5d4ef;" >
+          <div class="row">
+            <div class="col-md-6 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="col-md-6 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+          </div>
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+          </div>
+          <div class="text-center"><button type="submit">Send Message</button></div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <br><br>
+</section>
+    </div>
+    </body>
+    </html>
